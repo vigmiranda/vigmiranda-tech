@@ -55,7 +55,7 @@ export const projects: Project[] = [
   },
   {
     name: 'DragonKi',
-    role: 'Idealizador',
+    role: 'Produto · em construção',
     blurb:
       'Backend em Go com bots, workers, webhooks e pagamentos — arquitetura hexagonal, Redis/Asynq e fluxos idempotentes.',
     tags: ['Go', 'Postgres', 'Redis', 'Telegram'],
@@ -79,10 +79,10 @@ export const experiences: Experience[] = [
   },
   {
     company: 'DragonKi',
-    role: 'Idealizador',
+    role: 'Fundador · engenharia',
     period: 'jan/2026 — hoje',
     highlight:
-      'Produto próprio: bot, worker, webhooks e pagamentos em Go com arquitetura hexagonal.',
+      'Produto próprio que construo end-to-end: bot, worker, webhooks e pagamentos em Go com arquitetura hexagonal.',
   },
   {
     company: 'Compass UOL · Vivo',

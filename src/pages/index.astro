@@ -11,7 +11,9 @@ import {
 <BaseLayout>
   <header class="top">
     <div class="wrap top-inner">
-      <a class="top-brand" href="#topo">{site.brand}</a>
+      <a class="top-brand" href="#topo"
+        ><span class="brand-name">Vigmiranda</span><span class="brand-tld">.Tech</span></a
+      >
       <nav class="top-nav" aria-label="Principal">
         <a href="#projetos">Projetos</a>
         <a href="#experiencia">Experiência</a>
@@ -23,7 +25,9 @@ import {
   <main id="topo">
     <section class="hero">
       <div class="wrap hero-inner">
-        <p class="hero-brand">{site.brand}</p>
+        <p class="hero-brand">
+          <span class="brand-name">Vigmiranda</span><span class="brand-tld">.Tech</span>
+        </p>
         <h1 class="hero-headline">{site.headline}</h1>
         <p class="hero-support">
           {site.name} · {site.tagline} · {site.location}
@@ -183,7 +187,11 @@ import {
     text-decoration: none;
     min-width: 0;
     flex-shrink: 1;
-    overflow-wrap: anywhere;
+  }
+
+  .top-brand .brand-name,
+  .top-brand .brand-tld {
+    white-space: nowrap;
   }
 
   .top-brand:hover {
@@ -240,16 +248,19 @@ import {
 
   .hero-brand {
     font-family: var(--font-display);
-    font-size: clamp(2rem, 11vw, 4.75rem);
+    font-size: clamp(1.85rem, 9.5vw, 4.75rem);
     font-weight: 800;
     line-height: 0.98;
     letter-spacing: -0.045em;
     color: var(--paper);
     margin: 0 0 1.25rem;
     max-width: 100%;
-    overflow-wrap: anywhere;
-    word-break: break-word;
     animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .hero-brand .brand-name,
+  .hero-brand .brand-tld {
+    white-space: nowrap;
   }
 
   .hero-headline {

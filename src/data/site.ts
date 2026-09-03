@@ -11,7 +11,7 @@ export const site = {
   focus:
     'Aberto a papéis remote de Specialist, Tech Lead ou Arquitetura — e a parcerias em produto.',
   headline:
-    'Tech lead hands-on em sistemas financeiros críticos — e founder construindo produto de ponta\u00a0a\u00a0ponta.',
+    'Tech lead hands-on em engenharia de software — arquitetura, backend e produto de ponta\u00a0a\u00a0ponta.',
   summary:
     'Mais de 10 anos em backend e sistemas distribuídos no mercado financeiro — de bancos e meios de pagamento (Santander, BTG, Cielo, Pluxee, Itaú) à construção de produto como Co-Founder & CTO na ECSA (YC S22). Atuei como Tech Lead e Specialist liderando times e modernizando legado (incluindo migrações Java 7 → 21); também como Integration Architect em projetos de grande porte. Hoje sigo hands-on em engenharia no Itaú e, em paralelo, construo produtos próprios — Vector Growth, Hub, 1% ToDay e DragonKi — com Go, Kotlin, Java e AWS. Trabalho em Spec-Driven Development: a especificação guia o desenho, o código e a revisão; IA entra no ciclo inteiro (spec, implementação, testes e docs), com ownership humano nas decisões.',
 };

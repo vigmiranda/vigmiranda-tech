@@ -60,13 +60,6 @@ export const projects: Project[] = [
       'Backend em Go com bots, workers, webhooks e pagamentos — arquitetura hexagonal, Redis/Asynq e fluxos idempotentes.',
     tags: ['Go', 'Postgres', 'Redis', 'Telegram'],
   },
-  {
-    name: 'ECSA',
-    role: 'Co-Founder & CTO · YC S22',
-    blurb:
-      'Fintech de comex e câmbio: do zero à arquitetura, time e entrega em Go e Kotlin.',
-    tags: ['Go', 'Kotlin', 'Fintech', 'YC'],
-  },
 ];
 
 export type Experience = {

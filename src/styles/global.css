@@ -27,11 +27,14 @@
 html {
   scroll-behavior: smooth;
   color-scheme: dark;
+  overflow-x: clip;
 }
 
 body {
   margin: 0;
   min-height: 100vh;
+  max-width: 100%;
+  overflow-x: clip;
   font-family: var(--font-body);
   font-size: 1.0625rem;
   line-height: 1.65;
@@ -89,6 +92,7 @@ a:hover {
 .wrap {
   width: min(100% - 2 * var(--space), var(--max));
   margin-inline: auto;
+  min-width: 0;
 }
 
 .section {

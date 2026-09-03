@@ -78,13 +78,6 @@ export const experiences: Experience[] = [
       'Apps distribuídos mission-critical em Java/Go, AWS, Terraform e práticas de observabilidade.',
   },
   {
-    company: 'DragonKi',
-    role: 'Fundador · engenharia',
-    period: 'jan/2026 — hoje',
-    highlight:
-      'Produto próprio que construo end-to-end: bot, worker, webhooks e pagamentos em Go com arquitetura hexagonal.',
-  },
-  {
     company: 'Compass UOL · Vivo',
     role: 'Integration Architect',
     period: 'nov/2025 — abr/2026',

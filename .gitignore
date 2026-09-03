@@ -18,6 +18,7 @@ pnpm-debug.log*
 !.env.example
 Profile.pdf
 *.pdf
+!public/**/*.pdf
 .vercel-token.tmp
 
 # macOS / IDE

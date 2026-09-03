@@ -5,6 +5,8 @@ import {
   projects,
   experiences,
   education,
+  helpItems,
+  stackGroups,
 } from '../data/site';
 ---
 
@@ -17,6 +19,7 @@ import {
       <nav class="top-nav" aria-label="Principal">
         <a href="#projetos">Projetos</a>
         <a href="#experiencia">Experiência</a>
+        <a href="#curriculo">Currículo</a>
         <a href="#contato">Contato</a>
       </nav>
     </div>
@@ -33,11 +36,11 @@ import {
           <p class="hero-support">
             {site.name} · {site.tagline} · {site.location}
           </p>
+          <p class="hero-focus">{site.focus}</p>
           <div class="hero-actions">
-            <a class="btn btn-primary" href="#projetos">Ver projetos</a>
-            <a class="btn btn-ghost" href={site.linkedin} target="_blank" rel="noopener noreferrer"
-              >LinkedIn</a
-            >
+            <a class="btn btn-primary" href="#contato">Fale comigo</a>
+            <a class="btn btn-ghost" href="#projetos">Ver projetos</a>
+            <a class="btn btn-ghost" href={site.cvPath} download>Currículo PDF</a>
           </div>
         </div>
         <figure class="hero-media">
@@ -58,9 +61,42 @@ import {
         <span class="section-label">Sobre</span>
         <h2 class="section-title" id="sobre-title">Da engenharia financeira aos produtos próprios</h2>
         <p class="section-lead about-copy">{site.summary}</p>
-        <ul class="stack-list" aria-label="Stack principal">
-          {site.stack.map((item) => <li>{item}</li>)}
+      </div>
+    </section>
+
+    <section class="section help" id="ajuda" aria-labelledby="ajuda-title">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="section-label">Como posso ajudar</span>
+          <h2 class="section-title" id="ajuda-title">Onde gero mais valor</h2>
+          <p class="section-lead">
+            Recorte do que costumo entregar — em empresa, consultoria ou produto próprio.
+          </p>
+        </div>
+        <ul class="help-grid">
+          {
+            helpItems.map((item, i) => (
+              <li class="help-card reveal" style={`transition-delay: ${i * 50}ms`}>
+                <h3 class="help-title">{item.title}</h3>
+                <p class="help-blurb">{item.blurb}</p>
+              </li>
+            ))
+          }
         </ul>
+        <div class="stack-groups reveal">
+          {
+            stackGroups.map((group) => (
+              <div class="stack-group">
+                <h3 class="stack-label">{group.label}</h3>
+                <ul class="stack-list" aria-label={group.label}>
+                  {group.items.map((item) => (
+                    <li>{item}</li>
+                  ))}
+                </ul>
+              </div>
+            ))
+          }
+        </div>
       </div>
     </section>
 
@@ -70,7 +106,7 @@ import {
           <span class="section-label">Projetos</span>
           <h2 class="section-title" id="projetos-title">O que estou tocando</h2>
           <p class="section-lead">
-            Produtos e infra que construo ou lidero — do SaaS de conteúdo ao gateway de IA.
+            Produtos e infra que construo agora — problema, papel e stack.
           </p>
         </div>
         <ul class="project-grid">
@@ -84,6 +120,7 @@ import {
                   <h3 class="project-name">{project.name}</h3>
                   <span class="project-role">{project.role}</span>
                 </div>
+                <p class="project-problem">{project.problem}</p>
                 <p class="project-blurb">{project.blurb}</p>
                 <ul class="project-tags">
                   {project.tags.map((tag) => (
@@ -103,7 +140,7 @@ import {
           <span class="section-label">Experiência</span>
           <h2 class="section-title" id="exp-title">Trajetória</h2>
           <p class="section-lead">
-            Destaques recentes — bancos, fintech e liderança técnica hands-on.
+            Destaques com contexto de entrega — bancos, fintech e liderança técnica.
           </p>
         </div>
         <ol class="timeline">
@@ -139,13 +176,29 @@ import {
       </div>
     </section>
 
+    <section class="section cv" id="curriculo" aria-labelledby="cv-title">
+      <div class="wrap cv-inner reveal">
+        <span class="section-label">Currículo</span>
+        <h2 class="section-title" id="cv-title">Versão para download</h2>
+        <p class="section-lead">
+          PDF com a visão completa do perfil — útil para processos seletivos e encaminhamentos.
+        </p>
+        <div class="cv-actions">
+          <a class="btn btn-primary" href={site.cvPath} download
+            >Baixar currículo (PDF)</a
+          >
+          <a class="btn btn-ghost" href={site.linkedin} target="_blank" rel="noopener noreferrer"
+            >Ver no LinkedIn</a
+          >
+        </div>
+      </div>
+    </section>
+
     <section class="section contact" id="contato" aria-labelledby="contato-title">
       <div class="wrap contact-inner reveal">
         <span class="section-label">Contato</span>
         <h2 class="section-title" id="contato-title">Vamos conversar</h2>
-        <p class="section-lead">
-          Aberto a oportunidades remote-first e parcerias em produtos de engenharia.
-        </p>
+        <p class="section-lead">{site.focus}</p>
         <div class="contact-actions">
           <a class="btn btn-primary" href={`mailto:${site.email}`}>{site.email}</a>
           <a class="btn btn-ghost" href={site.linkedin} target="_blank" rel="noopener noreferrer"
@@ -154,6 +207,7 @@ import {
           <a class="btn btn-ghost" href={site.github} target="_blank" rel="noopener noreferrer"
             >GitHub</a
           >
+          <a class="btn btn-ghost" href={site.cvPath} download>Currículo PDF</a>
         </div>
       </div>
     </section>
@@ -289,12 +343,21 @@ import {
   }
 
   .hero-support {
-    margin: 0 0 1.75rem;
+    margin: 0 0 0.75rem;
     color: var(--mist);
     font-size: 0.92rem;
     line-height: 1.5;
     overflow-wrap: break-word;
     animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
+  }
+
+  .hero-focus {
+    margin: 0 0 1.5rem;
+    max-width: 28rem;
+    color: var(--fog);
+    font-size: 0.95rem;
+    line-height: 1.5;
+    animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.28s both;
   }
 
   .hero-actions {
@@ -411,22 +474,93 @@ import {
     font-size: 1.08rem;
   }
 
+  .help-grid {
+    list-style: none;
+    margin: 2.25rem 0 0;
+    padding: 0;
+    display: grid;
+    gap: 1rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .help-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  .help-card {
+    min-width: 0;
+    padding: 1.25rem 1.15rem;
+    border-top: 1px solid var(--line);
+  }
+
+  .help-title {
+    margin: 0 0 0.45rem;
+    font-family: var(--font-display);
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--paper);
+  }
+
+  .help-blurb {
+    margin: 0;
+    color: var(--mist);
+    font-size: 0.95rem;
+  }
+
+  .stack-groups {
+    margin-top: 2.5rem;
+    display: grid;
+    gap: 1.25rem;
+    grid-template-columns: 1fr;
+  }
+
+  @media (min-width: 640px) {
+    .stack-groups {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+  }
+
+  @media (min-width: 960px) {
+    .stack-groups {
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+  }
+
+  .stack-label {
+    margin: 0 0 0.65rem;
+    font-family: var(--font-display);
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--steel);
+  }
+
   .stack-list {
     list-style: none;
-    margin: 1.75rem 0 0;
+    margin: 0;
     padding: 0;
     display: flex;
     flex-wrap: wrap;
-    gap: 0.5rem;
+    gap: 0.45rem;
   }
 
   .stack-list li {
-    padding: 0.35rem 0.7rem;
+    padding: 0.3rem 0.65rem;
     border: 1px solid var(--line);
     border-radius: 999px;
-    font-size: 0.82rem;
+    font-size: 0.8rem;
     color: var(--fog);
-    letter-spacing: 0.02em;
+  }
+
+  .project-problem {
+    margin: 0 0 0.55rem;
+    color: var(--fog);
+    font-size: 0.92rem;
+    line-height: 1.45;
   }
 
   .project-grid {
@@ -612,6 +746,11 @@ import {
     max-width: 36rem;
   }
 
+  .cv-inner {
+    max-width: 36rem;
+  }
+
+  .cv-actions,
   .contact-actions {
     display: flex;
     flex-wrap: wrap;
@@ -694,7 +833,8 @@ import {
     }
 
     .hero-actions .btn,
-    .contact-actions .btn {
+    .contact-actions .btn,
+    .cv-actions .btn {
       width: 100%;
     }
 

@@ -153,6 +153,7 @@ a:hover {
   .hero-brand,
   .hero-headline,
   .hero-support,
+  .hero-focus,
   .hero-actions,
   .hero-media {
     animation: none !important;

@@ -2,30 +2,66 @@ export const site = {
   brand: 'Vigmiranda.Tech',
   name: 'Vitor Gomes Miranda',
   tagline: 'Software Engineering Specialist',
-  location: 'Balneário Camboriú, SC',
+  location: 'Balneário Camboriú, SC · remote-first',
   email: 'vigmiranda@gmail.com',
   linkedin: 'https://www.linkedin.com/in/vitorgomesmiranda/',
   github: 'https://github.com/vigmiranda',
   domain: 'https://vigmiranda-tech.com',
+  cvPath: '/curriculo-vitor-gomes-miranda.pdf',
+  focus:
+    'Aberto a papéis remote de Specialist, Tech Lead ou Arquitetura — e a parcerias em produto.',
   headline:
-    'Backend, arquitetura e sistemas críticos — com ownership de ponta\u00a0a\u00a0ponta.',
+    'Tech lead hands-on em sistemas financeiros críticos — e founder construindo produto de ponta\u00a0a\u00a0ponta.',
   summary:
     'Mais de 10 anos em backend e sistemas distribuídos no mercado financeiro — de bancos e meios de pagamento (Santander, BTG, Cielo, Pluxee, Itaú) à construção de produto como Co-Founder & CTO na ECSA (YC S22). Atuei como Tech Lead e Specialist liderando times e modernizando legado (incluindo migrações Java 7 → 21); também como Integration Architect em projetos de grande porte. Hoje sigo hands-on em engenharia no Itaú e, em paralelo, construo produtos próprios — Vector Growth, Hub, 1% ToDay e DragonKi — com Go, Kotlin, Java e AWS.',
-  stack: [
-    'Go',
-    'Kotlin',
-    'Java',
-    'Spring',
-    'Microservices',
-    'AWS',
-    'Kafka',
-    'Postgres',
-  ],
 };
+
+export const helpItems = [
+  {
+    title: 'Arquitetura e modernização',
+    blurb:
+      'Desenho de serviços, governança técnica e evolução de legado sem travar a entrega.',
+  },
+  {
+    title: 'Liderança técnica hands-on',
+    blurb:
+      'Coordeno times multiplataforma, mentoria e decisões críticas — sem sair do código.',
+  },
+  {
+    title: 'Produto de ponta a ponta',
+    blurb:
+      'Do zero ao produção: APIs, workers, billing, integrações e operação em cloud.',
+  },
+  {
+    title: 'Cloud e sistemas event-driven',
+    blurb:
+      'AWS, mensageria (Kafka/SQS), observabilidade e práticas DevOps no dia a dia.',
+  },
+];
+
+export const stackGroups = [
+  {
+    label: 'Linguagens',
+    items: ['Go', 'Kotlin', 'Java', 'TypeScript'],
+  },
+  {
+    label: 'Arquitetura',
+    items: ['Microserviços', 'Hexagonal', 'Event-driven', 'APIs'],
+  },
+  {
+    label: 'Cloud & DevOps',
+    items: ['AWS', 'Terraform', 'Docker', 'CI/CD'],
+  },
+  {
+    label: 'Dados & mensageria',
+    items: ['Postgres', 'Kafka', 'Redis', 'Oracle'],
+  },
+];
 
 export type Project = {
   name: string;
   role: string;
+  problem: string;
   blurb: string;
   tags: string[];
   href?: string;
@@ -35,29 +71,33 @@ export const projects: Project[] = [
   {
     name: 'Vector Growth',
     role: 'Produto · em construção',
+    problem: 'Marcas precisam publicar conteúdo com ritmo e operação sem depender de planilha.',
     blurb:
-      'Plataforma SaaS multi-brand para crescer marcas com conteúdo: agenda, pipeline de Reels, workers e ops web.',
+      'SaaS multi-brand: agenda, pipeline de Reels, workers e ops web para crescer com conteúdo.',
     tags: ['TypeScript', 'Postgres', 'Workers', 'SaaS'],
   },
   {
     name: 'Hub',
     role: 'Infra de IA · em construção',
+    problem: 'Times de produto precisam consumir vários providers de IA com custo e controle por tenant.',
     blurb:
-      'Gateway de IA com ledger por tenant, chaves virtuais e billing em micros USD — OpenAI-compatible, multi-provider.',
+      'Gateway OpenAI-compatible com ledger, chaves virtuais e billing em micros USD.',
     tags: ['Go', 'Postgres', 'Billing', 'OpenAPI'],
   },
   {
     name: '1% ToDay',
     role: 'Produto · mobile',
+    problem: 'Formar hábitos exige progresso claro, lembretes e um caminho até a assinatura.',
     blurb:
-      'App de hábitos com progresso diário, níveis, trial por referral e assinatura — Expo, API e sync na nuvem.',
+      'App de hábitos com níveis, trial por referral, sync na nuvem e paywall.',
     tags: ['React Native', 'Expo', 'Express', 'RevenueCat'],
   },
   {
     name: 'DragonKi',
     role: 'Produto · em construção',
+    problem: 'Automatizar fluxos com bot, pagamentos e jobs confiáveis sem acoplar tudo num monólito.',
     blurb:
-      'Backend em Go com bots, workers, webhooks e pagamentos — arquitetura hexagonal, Redis/Asynq e fluxos idempotentes.',
+      'Backend em Go: bots, workers, webhooks e pagamentos com arquitetura hexagonal.',
     tags: ['Go', 'Postgres', 'Redis', 'Telegram'],
   },
 ];
@@ -75,54 +115,56 @@ export const experiences: Experience[] = [
     role: 'Software Engineer',
     period: 'mai/2026 — hoje',
     highlight:
-      'Apps distribuídos mission-critical em Java/Go, AWS, Terraform e práticas de observabilidade.',
+      'Engenharia em aplicações distribuídas mission-critical (Java/Go), AWS, Terraform e foco em estabilidade, segurança (OAuth/JWT) e observabilidade em produção.',
   },
   {
     company: 'Compass UOL · Vivo',
     role: 'Integration Architect',
     period: 'nov/2025 — abr/2026',
     highlight:
-      'Governança de arquitetura, estimativas, documentação técnica e war rooms de entrega.',
+      'Governança de arquitetura alinhada às diretrizes corporativas, estimativas macro (Sprint 0), documentação técnica para o time e suporte em war rooms de entrega.',
   },
   {
     company: 'Cielo',
     role: 'Software Engineering Specialist / Tech Lead',
     period: 'set/2024 — ago/2025',
     highlight:
-      'Liderança de time multiplataforma; migração de APIs Java 7 → 21 e modernização de legado.',
+      'Liderança de time multiplataforma (backend, web, Android, iOS, QA); parceria com negócio na evolução do produto; entregas em produção e migração de APIs Java 7 → 21 no self-service.',
   },
   {
     company: 'Pluxee Brasil',
     role: 'Software Specialist',
     period: 'dez/2023 — ago/2024',
     highlight:
-      'Arquitetura, otimização de processos e serviços Spring/AWS em escala.',
+      'Definição de arquitetura e estrutura de projetos, otimização/migração de processos e serviços Spring em AWS (Lambda, RDS, EC2) com Oracle/Postgres.',
   },
   {
     company: 'ECSA',
     role: 'Co-Founder & CTO',
     period: 'abr/2022 — nov/2023',
     highlight:
-      'YC S22. Construção do produto e da engenharia do zero em Go e Kotlin.',
+      'YC S22. Construção da engenharia e do produto do zero (Go/Kotlin): arquitetura, time e entrega em fintech de comex e câmbio.',
   },
   {
     company: 'Saks',
     role: 'Tech Lead',
     period: 'dez/2020 — mar/2022',
-    highlight: 'Coordenação de time, reestruturação de legado em Go/Kotlin/Spring.',
+    highlight:
+      'Coordenação do time de desenvolvimento e reestruturação de projetos legados em Go, Kotlin e Spring.',
   },
   {
     company: 'Beyond · BTG Pactual',
     role: 'Senior Software Engineer',
     period: 'ago/2020 — jan/2021',
-    highlight: 'Banco digital: Kotlin, Clean Architecture, Kafka e AWS.',
+    highlight:
+      'Banco digital: serviços em Kotlin com Clean Architecture, Kafka e AWS (SQS, CloudFormation) em ambiente de alta criticidade.',
   },
   {
     company: 'Anteriormente',
     role: 'Engenharia em bancos e produtos digitais',
     period: '2010 — 2020',
     highlight:
-      'Santander, BRQ, Affero Lab e outros — Java/Spring, batch, mensageria e cloud.',
+      'Santander/BRQ (SPB), Affero Lab e outros — Java/Spring, batch, mensageria e cloud, base da carreira em sistemas críticos.',
   },
 ];
 

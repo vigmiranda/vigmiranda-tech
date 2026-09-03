@@ -13,7 +13,7 @@ export const site = {
   headline:
     'Tech lead hands-on em engenharia de software — arquitetura, backend e produto de ponta\u00a0a\u00a0ponta.',
   summary:
-    'Mais de 10 anos em backend e sistemas distribuídos no mercado financeiro — de bancos e meios de pagamento (Santander, BTG, Cielo, Pluxee, Itaú) à construção de produto como Co-Founder & CTO na ECSA (YC S22). Atuei como Tech Lead e Specialist liderando times e modernizando legado (incluindo migrações Java 7 → 21); também como Integration Architect em projetos de grande porte. Hoje sigo hands-on em engenharia no Itaú e, em paralelo, construo produtos próprios — Vector Growth, Hub, 1% ToDay e DragonKi — com Go, Kotlin, Java e AWS. Trabalho em Spec-Driven Development: a especificação guia o desenho, o código e a revisão; IA entra no ciclo inteiro (spec, implementação, testes e docs), com ownership humano nas decisões.',
+    'Mais de 10 anos em engenharia de software — backend, sistemas distribuídos, arquitetura e liderança técnica hands-on. Atuei como Tech Lead e Specialist liderando times, modernizando legado (incluindo migrações Java 7 → 21) e como Integration Architect em projetos de grande porte. Boa parte dessa trajetória foi no mercado financeiro e de pagamentos (Santander, BTG, Cielo, Pluxee, Itaú), em sistemas de alta criticidade. Também construí produto como Co-Founder & CTO na ECSA (YC S22). Hoje sigo hands-on em engenharia e, em paralelo, desenvolvo produtos próprios — Vector Growth, Hub, 1% ToDay e DragonKi — com Go, Kotlin, Java e AWS. Trabalho em Spec-Driven Development: a especificação guia o desenho, o código e a revisão; IA entra no ciclo inteiro (spec, implementação, testes e docs), com ownership humano nas decisões.',
 };
 
 export const practices = [

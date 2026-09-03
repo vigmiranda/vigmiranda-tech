@@ -13,8 +13,21 @@ export const site = {
   headline:
     'Tech lead hands-on em sistemas financeiros críticos — e founder construindo produto de ponta\u00a0a\u00a0ponta.',
   summary:
-    'Mais de 10 anos em backend e sistemas distribuídos no mercado financeiro — de bancos e meios de pagamento (Santander, BTG, Cielo, Pluxee, Itaú) à construção de produto como Co-Founder & CTO na ECSA (YC S22). Atuei como Tech Lead e Specialist liderando times e modernizando legado (incluindo migrações Java 7 → 21); também como Integration Architect em projetos de grande porte. Hoje sigo hands-on em engenharia no Itaú e, em paralelo, construo produtos próprios — Vector Growth, Hub, 1% ToDay e DragonKi — com Go, Kotlin, Java e AWS.',
+    'Mais de 10 anos em backend e sistemas distribuídos no mercado financeiro — de bancos e meios de pagamento (Santander, BTG, Cielo, Pluxee, Itaú) à construção de produto como Co-Founder & CTO na ECSA (YC S22). Atuei como Tech Lead e Specialist liderando times e modernizando legado (incluindo migrações Java 7 → 21); também como Integration Architect em projetos de grande porte. Hoje sigo hands-on em engenharia no Itaú e, em paralelo, construo produtos próprios — Vector Growth, Hub, 1% ToDay e DragonKi — com Go, Kotlin, Java e AWS. Trabalho em Spec-Driven Development: a especificação guia o desenho, o código e a revisão; IA entra no ciclo inteiro (spec, implementação, testes e docs), com ownership humano nas decisões.',
 };
+
+export const practices = [
+  {
+    title: 'Spec-Driven Development',
+    blurb:
+      'Contrato primeiro: objetivo, escopo, gates e critérios de pronto ficam explícitos antes do código. A spec vira fonte da verdade para arquitetura, implementação e review — menos retrabalho, mais alinhamento entre produto e engenharia.',
+  },
+  {
+    title: 'IA no ciclo de desenvolvimento',
+    blurb:
+      'Uso agentes e ferramentas generativas (Codex e similares) em todo o fluxo: rascunho de spec, código, testes, refatoração e documentação. Não substituo julgamento técnico — acelero entrega e qualidade com revisão, boundaries e gates claros.',
+  },
+];
 
 export const helpItems = [
   {
@@ -37,6 +50,11 @@ export const helpItems = [
     blurb:
       'AWS, mensageria (Kafka/SQS), observabilidade e práticas DevOps no dia a dia.',
   },
+  {
+    title: 'Spec-Driven + engenharia com IA',
+    blurb:
+      'Operação com spec como contrato e IA no ciclo (código, testes, docs) — com gates, review e accountability.',
+  },
 ];
 
 export const stackGroups = [
@@ -55,6 +73,10 @@ export const stackGroups = [
   {
     label: 'Dados & mensageria',
     items: ['Postgres', 'Kafka', 'Redis', 'Oracle'],
+  },
+  {
+    label: 'Método',
+    items: ['Spec-Driven', 'AI-assisted', 'Codex', 'Gates & DoD'],
   },
 ];
 

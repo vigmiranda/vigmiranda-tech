@@ -10,7 +10,7 @@ export const site = {
   headline:
     'Backend, arquitetura e sistemas críticos — com ownership de ponta\u00a0a\u00a0ponta.',
   summary:
-    'Mais de 10 anos entregando sistemas escaláveis e mission-critical. Liderança técnica em Cielo, Pluxee e BTG; co-founder & CTO na ECSA (YC S22). Go, Kotlin, Java e cloud-native na AWS — com um pé firme em produtos próprios.',
+    'Mais de 10 anos em backend e sistemas distribuídos no mercado financeiro — de bancos e meios de pagamento (Santander, BTG, Cielo, Pluxee, Itaú) à construção de produto como Co-Founder & CTO na ECSA (YC S22). Atuei como Tech Lead e Specialist liderando times e modernizando legado (incluindo migrações Java 7 → 21); também como Integration Architect em projetos de grande porte. Hoje sigo hands-on em engenharia no Itaú e, em paralelo, construo produtos próprios — Vector Growth, Hub, 1% ToDay e DragonKi — com Go, Kotlin, Java e AWS.',
   stack: [
     'Go',
     'Kotlin',

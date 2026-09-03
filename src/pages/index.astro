@@ -24,20 +24,32 @@ import {
 
   <main id="topo">
     <section class="hero">
-      <div class="wrap hero-inner">
-        <p class="hero-brand">
-          <span class="brand-name">Vigmiranda</span><span class="brand-tld">.Tech</span>
-        </p>
-        <h1 class="hero-headline">{site.headline}</h1>
-        <p class="hero-support">
-          {site.name} · {site.tagline} · {site.location}
-        </p>
-        <div class="hero-actions">
-          <a class="btn btn-primary" href="#projetos">Ver projetos</a>
-          <a class="btn btn-ghost" href={site.linkedin} target="_blank" rel="noopener noreferrer"
-            >LinkedIn</a
-          >
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <p class="hero-brand">
+            <span class="brand-name">Vigmiranda</span><span class="brand-tld">.Tech</span>
+          </p>
+          <h1 class="hero-headline">{site.headline}</h1>
+          <p class="hero-support">
+            {site.name} · {site.tagline} · {site.location}
+          </p>
+          <div class="hero-actions">
+            <a class="btn btn-primary" href="#projetos">Ver projetos</a>
+            <a class="btn btn-ghost" href={site.linkedin} target="_blank" rel="noopener noreferrer"
+              >LinkedIn</a
+            >
+          </div>
         </div>
+        <figure class="hero-media">
+          <img
+            src="/vitor.jpg"
+            alt={`${site.name} — engenharia e produtos`}
+            width="1024"
+            height="1024"
+            decoding="async"
+            fetchpriority="high"
+          />
+        </figure>
       </div>
     </section>
 
@@ -220,30 +232,25 @@ import {
   .hero {
     min-height: min(88svh, 48rem);
     display: grid;
-    align-items: end;
-    padding-block: clamp(3.5rem, 12vw, 7rem) clamp(2.5rem, 7vw, 4.5rem);
+    align-items: center;
+    padding-block: clamp(2.5rem, 8vw, 5.5rem) clamp(2.25rem, 6vw, 4rem);
     position: relative;
     overflow: hidden;
   }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    width: min(55vw, 22rem);
-    height: min(55vw, 22rem);
-    right: -12%;
-    top: 6%;
-    border-radius: 50%;
-    background: radial-gradient(circle, var(--glow), transparent 68%);
-    animation: pulse 8s ease-in-out infinite;
-    pointer-events: none;
-  }
-
-  .hero-inner {
+  .hero-grid {
     position: relative;
-    max-width: 42rem;
+    display: grid;
+    gap: clamp(1.5rem, 4vw, 2.75rem);
+    align-items: center;
     min-width: 0;
     width: 100%;
+  }
+
+  .hero-copy {
+    position: relative;
+    z-index: 1;
+    min-width: 0;
     container-type: inline-size;
     container-name: hero;
   }
@@ -295,6 +302,64 @@ import {
     flex-wrap: wrap;
     gap: 0.75rem;
     animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.32s both;
+  }
+
+  .hero-media {
+    margin: 0;
+    min-width: 0;
+    width: min(100%, 22rem);
+    justify-self: center;
+    animation: rise 0.95s cubic-bezier(0.22, 1, 0.36, 1) 0.18s both;
+  }
+
+  .hero-media img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1;
+    object-fit: cover;
+    object-position: center 18%;
+    display: block;
+  }
+
+  @media (min-width: 860px) {
+    .hero {
+      padding-inline: 0;
+    }
+
+    .hero-grid {
+      width: min(100% - 2 * var(--space), var(--max));
+      margin-inline: auto;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 0;
+      min-height: min(78svh, 40rem);
+    }
+
+    .hero-copy {
+      padding-right: clamp(1.5rem, 3vw, 2.5rem);
+      align-self: center;
+    }
+
+    .hero-media {
+      width: auto;
+      max-width: none;
+      justify-self: stretch;
+      align-self: stretch;
+      /* sangra até a borda direita da viewport */
+      margin-right: calc(-1 * max(0px, (100vw - min(100vw, var(--max))) / 2 + var(--space)));
+      width: calc(100% + max(0px, (100vw - min(100vw, var(--max))) / 2 + var(--space)));
+      min-height: min(78svh, 40rem);
+    }
+
+    .hero-media img {
+      width: 100%;
+      height: 100%;
+      max-height: none;
+      aspect-ratio: auto;
+      object-fit: cover;
+      object-position: center 20%;
+      mask-image: linear-gradient(90deg, transparent 0%, #000 18%);
+      -webkit-mask-image: linear-gradient(90deg, transparent 0%, #000 18%);
+    }
   }
 
   .btn {
@@ -615,8 +680,17 @@ import {
 
     .hero {
       min-height: auto;
-      padding-block: 3.25rem 2.5rem;
-      align-items: center;
+      padding-block: 2.5rem 2rem;
+      align-items: start;
+    }
+
+    .hero-media {
+      order: 2;
+      max-width: min(100%, 22rem);
+    }
+
+    .hero-copy {
+      order: 1;
     }
 
     .hero-actions .btn,

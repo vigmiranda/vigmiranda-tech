@@ -244,17 +244,21 @@ import {
     max-width: 42rem;
     min-width: 0;
     width: 100%;
+    container-type: inline-size;
+    container-name: hero;
   }
 
+  /* Uma linha só, escala pela largura útil — Syne é bem larga */
   .hero-brand {
     font-family: var(--font-display);
-    font-size: clamp(1.85rem, 9.5vw, 4.75rem);
+    font-size: min(4.75rem, calc(100cqi / 12.5));
     font-weight: 800;
-    line-height: 0.98;
+    line-height: 1;
     letter-spacing: -0.045em;
     color: var(--paper);
-    margin: 0 0 1.25rem;
+    margin: 0 0 1.15rem;
     max-width: 100%;
+    white-space: nowrap;
     animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
   }
 
@@ -265,22 +269,24 @@ import {
 
   .hero-headline {
     font-family: var(--font-display);
-    font-size: clamp(1.15rem, 3.2vw, 1.55rem);
+    font-size: clamp(1.05rem, 3.8cqi + 0.75rem, 1.55rem);
     font-weight: 600;
-    line-height: 1.35;
+    line-height: 1.4;
     letter-spacing: -0.02em;
     color: var(--fog);
     margin: 0 0 1rem;
     max-width: 28rem;
-    overflow-wrap: anywhere;
+    overflow-wrap: break-word;
+    hyphens: manual;
     animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.12s both;
   }
 
   .hero-support {
     margin: 0 0 1.75rem;
     color: var(--mist);
-    font-size: 0.95rem;
-    overflow-wrap: anywhere;
+    font-size: 0.92rem;
+    line-height: 1.5;
+    overflow-wrap: break-word;
     animation: rise 0.9s cubic-bezier(0.22, 1, 0.36, 1) 0.22s both;
   }
 
@@ -599,8 +605,18 @@ import {
   }
 
   @media (max-width: 480px) {
+    .top-nav a {
+      font-size: 0.82rem;
+    }
+
     .top-nav a:nth-child(2) {
       display: none;
+    }
+
+    .hero {
+      min-height: auto;
+      padding-block: 3.25rem 2.5rem;
+      align-items: center;
     }
 
     .hero-actions .btn,
@@ -610,6 +626,13 @@ import {
 
     .timeline-item {
       padding-left: 1.1rem;
+    }
+  }
+
+  /* Fallback se o browser não tiver cqi */
+  @supports not (font-size: 1cqi) {
+    .hero-brand {
+      font-size: clamp(1.35rem, 7.2vw, 4.75rem);
     }
   }
 </style>

@@ -8,7 +8,7 @@ export const site = {
   github: 'https://github.com/vigmiranda',
   domain: 'https://vigmiranda-tech.com',
   headline:
-    'Backend, arquitetura e sistemas críticos — com ownership de ponta a ponta.',
+    'Backend, arquitetura e sistemas críticos — com ownership de ponta\u00a0a\u00a0ponta.',
   summary:
     'Mais de 10 anos entregando sistemas escaláveis e mission-critical. Liderança técnica em Cielo, Pluxee e BTG; co-founder & CTO na ECSA (YC S22). Go, Kotlin, Java e cloud-native na AWS — com um pé firme em produtos próprios.',
   stack: [

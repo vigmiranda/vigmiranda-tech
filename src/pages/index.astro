@@ -8,6 +8,7 @@ import {
   helpItems,
   stackGroups,
   practices,
+  books,
 } from '../data/site';
 ---
 
@@ -19,6 +20,7 @@ import {
       >
       <nav class="top-nav" aria-label="Principal">
         <a href="#projetos">Projetos</a>
+        <a href="#livros">Livros</a>
         <a href="#experiencia">Experiência</a>
         <a href="#curriculo">Currículo</a>
         <a href="#contato">Contato</a>
@@ -60,8 +62,8 @@ import {
     <section class="section about" id="sobre" aria-labelledby="sobre-title">
       <div class="wrap reveal">
         <span class="section-label">Sobre</span>
-        <h2 class="section-title" id="sobre-title">Engenharia de software, de ponta a ponta</h2>
-        <p class="section-lead about-copy">{site.summary}</p>
+        <h2 class="section-title" id="sobre-title">Engenharia, produtos e histórias</h2>
+        {site.about.map((paragraph) => <p class="section-lead about-copy">{paragraph}</p>)}
       </div>
     </section>
 
@@ -129,7 +131,7 @@ import {
           <span class="section-label">Projetos</span>
           <h2 class="section-title" id="projetos-title">O que estou tocando</h2>
           <p class="section-lead">
-            Produtos e infra que construo agora — problema, papel e stack.
+            Produtos, jogos e automações que construo agora — problema, papel e stack.
           </p>
         </div>
         <ul class="project-grid">
@@ -150,6 +152,58 @@ import {
                     <li>{tag}</li>
                   ))}
                 </ul>
+                {project.href && (
+                  <a
+                    class="project-link"
+                    href={project.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Ver projeto
+                  </a>
+                )}
+              </li>
+            ))
+          }
+        </ul>
+      </div>
+    </section>
+
+    <section class="section books" id="livros" aria-labelledby="livros-title">
+      <div class="wrap">
+        <div class="reveal">
+          <span class="section-label">Livros</span>
+          <h2 class="section-title" id="livros-title">Do código às histórias</h2>
+          <p class="section-lead">
+            Escrevo entre o narrativo e o técnico: fantasia nascida do meu próprio jogo e guias
+            práticos sobre tecnologia e automação.
+          </p>
+        </div>
+        <ul class="project-grid">
+          {
+            books.map((book, i) => (
+              <li class="project reveal" style={`transition-delay: ${i * 60}ms`}>
+                <div class="project-meta">
+                  <h3 class="project-name">{book.title}</h3>
+                  {book.status && <span class="project-role">{book.status}</span>}
+                </div>
+                {book.series && <p class="project-problem">{book.series}</p>}
+                <p class="project-blurb">{book.blurb}</p>
+                <ul class="project-tags">
+                  {book.tags.map((tag) => (
+                    <li>{tag}</li>
+                  ))}
+                </ul>
+                {book.href && (
+                  <a
+                    class="project-link"
+                    href={book.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    {book.cta ?? 'Ver livro'}
+                  </a>
+                )}
               </li>
             ))
           }
@@ -229,6 +283,9 @@ import {
           >
           <a class="btn btn-ghost" href={site.github} target="_blank" rel="noopener noreferrer"
             >GitHub</a
+          >
+          <a class="btn btn-ghost" href={site.instagram} target="_blank" rel="noopener noreferrer"
+            >Instagram</a
           >
           <a class="btn btn-ghost" href={site.cvPath} download>Currículo PDF</a>
         </div>
@@ -497,6 +554,10 @@ import {
     font-size: 1.08rem;
   }
 
+  .about-copy + .about-copy {
+    margin-top: 1rem;
+  }
+
   .help-grid {
     list-style: none;
     margin: 2.25rem 0 0;
@@ -659,6 +720,23 @@ import {
     font-size: 0.75rem;
     color: var(--fog);
     opacity: 0.85;
+  }
+
+  .project-link {
+    display: inline-block;
+    margin-top: 1rem;
+    color: var(--copper-bright);
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+  }
+
+  .project-link::after {
+    content: ' →';
+  }
+
+  .project-link:hover {
+    color: var(--paper);
   }
 
   .project-tags li:not(:last-child)::after {
@@ -840,8 +918,8 @@ import {
       gap: 0.35rem 0.7rem;
     }
 
-    .top-nav a:nth-child(2),
-    .top-nav a:nth-child(3) {
+    .top-nav a:nth-child(3),
+    .top-nav a:nth-child(4) {
       display: none;
     }
   }

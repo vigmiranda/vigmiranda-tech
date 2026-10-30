@@ -1,20 +1,56 @@
 export const site = {
   brand: 'Vigmiranda.Tech',
   name: 'Vitor Gomes Miranda',
-  tagline: 'Software Engineering Specialist',
+  tagline: 'Software Engineer · Escritor · Criador de projetos digitais',
   location: 'Balneário Camboriú, SC · remote-first',
   email: 'vigmiranda@gmail.com',
   linkedin: 'https://www.linkedin.com/in/vitorgomesmiranda/',
   github: 'https://github.com/vigmiranda',
+  instagram: 'https://www.instagram.com/vigmiranda.tech/',
   domain: 'https://vigmiranda-tech.com',
   cvPath: '/curriculo-vitor-gomes-miranda.pdf',
   focus:
-    'Aberto a papéis remote de Specialist, Tech Lead ou Arquitetura — e a parcerias em produto.',
+    'Aberto a papéis remote de Specialist, Tech Lead ou Arquitetura, a parcerias em produto — e a leitores curiosos pelos meus livros.',
   headline:
-    'Tech lead hands-on em engenharia de software — arquitetura, backend e produto de ponta\u00a0a\u00a0ponta.',
-  summary:
-    'Mais de 10 anos em engenharia de software — backend, sistemas distribuídos, arquitetura e liderança técnica hands-on. Atuei como Tech Lead e Specialist liderando times, modernizando legado (incluindo migrações Java 7 → 21) e como Integration Architect em projetos de grande porte. Boa parte dessa trajetória foi no mercado financeiro e de pagamentos (Santander, BTG, Cielo, Pluxee, Itaú), em sistemas de alta criticidade. Também construí produto como Co-Founder & CTO na ECSA (YC S22). Hoje sigo hands-on em engenharia e, em paralelo, desenvolvo produtos próprios — Vector Growth, Hub, 1% ToDay e DragonKi — com Go, Kotlin, Java e AWS. Trabalho em Spec-Driven Development: a especificação guia o desenho, o código e a revisão; IA entra no ciclo inteiro (spec, implementação, testes e docs), com ownership humano nas decisões.',
+    'Tech lead hands-on em engenharia de software — arquitetura, backend e produto de ponta\u00a0a\u00a0ponta. Também escrevo livros e construo automações.',
+  description:
+    'Vitor Gomes Miranda — desenvolvedor de software, escritor e criador de projetos digitais. Engenharia de software, arquitetura e liderança técnica hands-on; produtos próprios, automações para day trade e livros de fantasia e tecnologia.',
+  about: [
+    'Desenvolvedor de software há mais de 10 anos, com trajetória em backend, sistemas distribuídos, arquitetura e liderança técnica hands-on. Atuei como Tech Lead, Specialist e Integration Architect em sistemas de alta criticidade no mercado financeiro e de pagamentos (Itaú, Santander, BTG, Cielo, Pluxee), modernizando legado — incluindo migrações Java 7 → 21 — e liderando times multiplataforma. Fui Co-Founder & CTO da ECSA (YC S22), construindo engenharia e produto do zero.',
+    'Em paralelo, crio projetos digitais próprios: SaaS, infraestrutura de IA, apps, um RPG para Telegram e robôs de trading para MetaTrader 5 e Profit — com Go, Kotlin, Java, TypeScript e AWS. Trabalho em Spec-Driven Development: a especificação guia o desenho, o código e a revisão; a IA entra no ciclo inteiro (spec, implementação, testes e docs), com ownership humano nas decisões.',
+    'Também sou escritor. Apaixonado por literatura de fantasia e por RPGs, encontro na escrita espaço para explorar ideias, construir universos e compartilhar conhecimento. Meus livros transitam entre o narrativo e o técnico — da saga DragonKi — Crônicas de Aethoria, nascida do meu próprio jogo, a um guia sobre automação de investimentos com IA —, aproximando a experiência prática da imaginação.',
+  ],
 };
+
+export type Book = {
+  title: string;
+  series?: string;
+  status?: string;
+  blurb: string;
+  tags: string[];
+  href?: string;
+  cta?: string;
+};
+
+export const books: Book[] = [
+  {
+    title: 'O Despertar',
+    series: 'DragonKi — Crônicas de Aethoria · Livro I',
+    status: 'Publicado · out/2026',
+    blurb:
+      'Ayla desaparece de Valdora sem explicações, e Kael, seu irmão, parte por um mundo que conhece apenas pelas histórias. Uma fantasia sobre família, autoconhecimento e a coragem de seguir sem ter todas as respostas — 18 capítulos e 28 ilustrações.',
+    tags: ['Fantasia', 'Kindle', '347 páginas'],
+    href: 'https://www.amazon.com.br/dp/B0HP6KRQDG',
+    cta: 'Ler na Amazon',
+  },
+  {
+    title: 'Do Prompt ao Robô',
+    series: 'Investimento e Automação',
+    blurb:
+      'Automações para MetaTrader 5 com ajuda de inteligência artificial: da ideia da estratégia ao código MQL5, com testes, gestão de risco e os aprendizados de construir robôs na prática.',
+    tags: ['MQL5', 'MetaTrader 5', 'IA', 'Day trade'],
+  },
+];
 
 export const practices = [
   {
@@ -60,7 +96,7 @@ export const helpItems = [
 export const stackGroups = [
   {
     label: 'Linguagens',
-    items: ['Go', 'Kotlin', 'Java', 'TypeScript'],
+    items: ['Go', 'Kotlin', 'Java', 'TypeScript', 'MQL5'],
   },
   {
     label: 'Arquitetura',
@@ -92,7 +128,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     name: 'Vector Growth',
-    role: 'Produto · em construção',
+    role: 'Produto · SaaS',
     problem: 'Marcas precisam publicar conteúdo com ritmo e operação sem depender de planilha.',
     blurb:
       'SaaS multi-brand: agenda, pipeline de Reels, workers e ops web para crescer com conteúdo.',
@@ -100,7 +136,7 @@ export const projects: Project[] = [
   },
   {
     name: 'Hub',
-    role: 'Infra de IA · em construção',
+    role: 'Infra de IA',
     problem: 'Times de produto precisam consumir vários providers de IA com custo e controle por tenant.',
     blurb:
       'Gateway OpenAI-compatible com ledger, chaves virtuais e billing em micros USD.',
@@ -116,11 +152,19 @@ export const projects: Project[] = [
   },
   {
     name: 'DragonKi',
-    role: 'Produto · em construção',
-    problem: 'Automatizar fluxos com bot, pagamentos e jobs confiáveis sem acoplar tudo num monólito.',
+    role: 'Jogo · RPG no Telegram',
+    problem: 'Um RPG que vive dentro do chat, com economia, eventos semanais e pagamentos reais.',
     blurb:
-      'Backend em Go: bots, workers, webhooks e pagamentos com arquitetura hexagonal.',
+      'Backend em Go com bot, workers e webhook de pagamentos: loja, referral, Big Boss semanal com ranking e premiação assíncrona. O universo do jogo virou a saga Crônicas de Aethoria.',
     tags: ['Go', 'Postgres', 'Redis', 'Telegram'],
+  },
+  {
+    name: 'Robôs para day trade',
+    role: 'Automação · trading',
+    problem: 'Executar estratégias com disciplina, sem depender de decisão manual a cada candle.',
+    blurb:
+      'Expert Advisors para MetaTrader 5 e Profit (NTSL): leitura de regime de mercado, tendência com EMA/ADX, gestão de risco com stop diário e sessões controladas — em minicontratos B3, forex, ouro e cripto.',
+    tags: ['MQL5', 'NTSL', 'MetaTrader 5', 'Gestão de risco'],
   },
 ];
 

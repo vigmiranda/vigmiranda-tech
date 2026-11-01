@@ -34,6 +34,16 @@ export type Book = {
 
 export const books: Book[] = [
   {
+    title: 'Do Prompt ao Robô',
+    series: 'Investimento e Automação',
+    status: 'Publicado · nov/2026',
+    blurb:
+      'A construção de um Expert Advisor em MQL5 com ajuda de IA: de regras sem ambiguidade e prompts à revisão do código, cálculo de volume e testes reproduzíveis no MetaTrader 5 — com laboratórios guiados, códigos completos e ficha de validação.',
+    tags: ['MQL5', 'MetaTrader 5', 'IA', 'Kindle', '154 páginas'],
+    href: 'https://www.amazon.com.br/dp/B0HQ15343Q',
+    cta: 'Ler na Amazon',
+  },
+  {
     title: 'O Despertar',
     series: 'DragonKi — Crônicas de Aethoria · Livro I',
     status: 'Publicado · out/2026',
@@ -42,13 +52,6 @@ export const books: Book[] = [
     tags: ['Fantasia', 'Kindle', '347 páginas'],
     href: 'https://www.amazon.com.br/dp/B0HP6KRQDG',
     cta: 'Ler na Amazon',
-  },
-  {
-    title: 'Do Prompt ao Robô',
-    series: 'Investimento e Automação',
-    blurb:
-      'Automações para MetaTrader 5 com ajuda de inteligência artificial: da ideia da estratégia ao código MQL5, com testes, gestão de risco e os aprendizados de construir robôs na prática.',
-    tags: ['MQL5', 'MetaTrader 5', 'IA', 'Day trade'],
   },
 ];
 
